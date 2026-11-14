@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://custodytap.com/sitemap.xml

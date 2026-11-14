@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NERC CIP removable media and transient cyber asset tracking | CustodyTap</title>
+<meta name="description" content="Custody evidence for transient cyber assets and removable media under CIP-003-9 Attachment 1 Section 5 and CIP-010-4 R4: per-use records, scans, hand-offs and destruction certificates, by NFC tap.">
+<link rel="canonical" href="https://custodytap.com/nerc-cip/">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CustodyTap">
+<meta property="og:title" content="Removable media and transient cyber asset tracking for NERC CIP">
+<meta property="og:description" content="Every USB drive. Every laptop. Every tap on the record. Supports evidence for CIP-003-9 Section 5 and CIP-010-4 R4.">
+<meta property="og:url" content="https://custodytap.com/nerc-cip/">
+<meta property="og:image" content="https://custodytap.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Removable media and transient cyber asset tracking for NERC CIP",
+  "url": "https://custodytap.com/nerc-cip/",
+  "isPartOf": { "@type": "WebSite", "url": "https://custodytap.com/", "name": "CustodyTap" },
+  "about": ["NERC CIP-003-9", "CIP-010-4", "Transient cyber assets", "Removable media", "Chain of custody"]
+}
+</script>
+</head>
+<body>
+
+<header class="wrap site-head">
+  <a class="mark" href="/" aria-label="CustodyTap home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>
+    CustodyTap
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-sector" href="/nerc-cip/" aria-current="page">For utilities</a>
+    <a class="nav-sector" href="/hipaa/">For healthcare</a>
+    <a href="#pilot">Start a pilot</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="wrap page-head">
+    <h1>Removable media and transient cyber asset tracking for NERC CIP</h1>
+    <p class="lede">CustodyTap puts an NFC tag on each USB drive, laptop and piece of test gear. Technicians tap it with their phone at every check-out, scan, connection, hand-off and check-in. The result is a custody record that supports evidence for <span class="nw">CIP-003-9</span> <span class="nw">Attachment 1 Section 5</span> and <span class="nw">CIP-010-4 R4</span>.</p>
+    <p class="small">For compliance leads and field supervisors at utilities with low impact sites, and at those with medium or high impact sites that manage transient cyber assets and removable media.</p>
+  </div>
+
+  <section class="section prose" aria-labelledby="cabinet">
+    <div class="wrap">
+      <h2 id="cabinet">Records made at the cabinet, not reconstructed later</h2>
+      <p>Tap the tag and confirm with a fingerprint, and the record is made. The app offers only the actions that make sense for that item right now, so the details auditors ask for get filled in at the time:</p>
+      <ul>
+        <li>what the item was used for, and who authorized it;</li>
+        <li>the scan method, tool, definitions date and result;</li>
+        <li>when it was connected and disconnected.</li>
+      </ul>
+
+      <h3>Every action has a name on it</h3>
+      <p>Each tap is confirmed with the technician's own fingerprint or face unlock on their own phone. A hand-off isn't complete until the receiver taps the same tag and accepts it. If they don't, the item stays with the person who had it, and the missed hand-off shows up as an exception.</p>
+
+      <h3>A record that shows if anyone changes it</h3>
+      <p>Events are chained together by hash, and each day's head is emailed to your admins. A changed or deleted record breaks the chain. Exports come with a short script that checks everything without CustodyTap, so your auditor doesn't have to take our word for it.</p>
+
+      <h3>Reuse and disposal, documented</h3>
+      <p>Sanitization and destruction records include the method, the witness and photos with their <span class="nw">SHA-256</span>. Each one produces a certificate that supports evidence for <span class="nw">CIP-011-3 R2</span>.</p>
+
+      <h3>No BCSI required</h3>
+      <p>Items are tracked by asset code and location code. Free-text fields carry a reminder to keep system names and addresses out.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="gets">
+    <div class="wrap">
+      <h2 id="gets">What your auditor gets</h2>
+      <ul class="ticks">
+        <li>One custody history per item, from registration to destruction</li>
+        <li>A use log with one row per connection</li>
+        <li>An exceptions report: missing scans, expired hand-offs, broken seals, lost items</li>
+        <li>Certificates of sanitization and destruction</li>
+        <li>A data export they can check themselves</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="pilot" aria-labelledby="pilot-title">
+    <div class="wrap">
+      <div class="pilot">
+        <h2 id="pilot-title">Start a <span class="nw">90-day</span> pilot on one site</h2>
+        <p>We set up your organization, tag your first items and train your technicians. You keep your data.</p>
+        <p><a class="button" href="mailto:dbrown@enthropicdata.com?subject=CustodyTap%20pilot%20(utility)">Email David Brown</a></p>
+        <p class="small">dbrown@enthropicdata.com</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+  <p>CustodyTap supports evidence for the requirements named on this site. It is not affiliated with or endorsed by NERC, any Regional Entity or the U.S. Department of Health and Human Services.</p>
+  <p>&copy; 2026 Enthropic Data LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>

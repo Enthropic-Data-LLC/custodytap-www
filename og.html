@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CustodyTap share image source</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/style.css">
+<style>
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 64px 72px; }
+  .mark { font-size: 2.1rem; }
+  .mark svg { width: 2.3rem; height: 2.3rem; }
+  h1 { font-size: 3.4rem; margin-top: 28px; max-width: 15ch; }
+  .lede { font-size: 1.35rem; max-width: 30ch; color: var(--muted); }
+  .record { font-size: 1.05rem; }
+  .record td:nth-child(3) { white-space: nowrap; }
+</style>
+</head>
+<body>
+  <div>
+    <span class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>CustodyTap</span>
+    <h1>Chain of custody, recorded with a tap.</h1>
+    <p class="lede">USB drives, laptops and test sets. Supports evidence for <span class="nw">NERC CIP-003-9</span>, <span class="nw">CIP-010-4 R4</span> and <span class="nw">HIPAA §164.310(d)</span>.</p>
+  </div>
+  <figure class="record">
+    <div class="record-head"><span class="record-title">Chain of custody record</span><span class="record-item">Item TCA-0142</span></div>
+    <table>
+      <tbody>
+        <tr><td>07:52</td><td>Checked out</td><td>J. Ortiz</td></tr>
+        <tr><td>07:58</td><td>Scanned</td><td class="entry">Clean</td></tr>
+        <tr><td>08:31</td><td>Connected</td><td class="entry">WS-12</td></tr>
+        <tr><td>09:40</td><td>Handed off</td><td class="entry">Accepted, K. Patel</td></tr>
+        <tr><td>10:15</td><td>Checked in</td><td>K. Patel</td></tr>
+      </tbody>
+    </table>
+    <figcaption><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Chain intact.</span></figcaption>
+  </figure>
+</body>
+</html>

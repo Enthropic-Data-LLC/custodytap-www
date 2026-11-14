@@ -1,0 +1,433 @@
+/* CustodyTap marketing site. One family (Archivo, self-hosted, variable width + weight).
+   The custody record in the hero is the one bold element; everything else stays quiet. */
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("/fonts/archivo-latin.woff2") format("woff2");
+}
+
+:root {
+  --paper: #fbfcfc;
+  --ink: #1c262b;
+  --muted: #55636a;
+  --rule: #c8d2d6;
+  --form: #fff3b4;      /* the canary copy of a carbonless custody form */
+  --form-rule: #d9c66a;
+  --form-ink: #2b2a1d;
+  --pen: #2443b0;       /* ballpoint blue: entries, links, the one button */
+  --pen-ink: #ffffff;
+  --measure: 66ch;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12191c;
+    --ink: #e6ecee;
+    --muted: #9aa9af;
+    --rule: #33424a;
+    --form: #2f2b14;
+    --form-rule: #5c5226;
+    --form-ink: #f1e8bf;
+    --pen: #9db0ff;
+    --pen-ink: #0e1430;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #12191c;
+  --ink: #e6ecee;
+  --muted: #9aa9af;
+  --rule: #33424a;
+  --form: #2f2b14;
+  --form-rule: #5c5226;
+  --form-ink: #f1e8bf;
+  --pen: #9db0ff;
+  --pen-ink: #0e1430;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  font-stretch: 100%;
+}
+
+a { color: var(--pen); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--pen);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 40rem) {
+  .wrap { padding: 0 2rem; }
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.site-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 760;
+  font-stretch: 75%;
+  font-size: 1.45rem;
+  letter-spacing: -0.005em;
+}
+
+.mark svg { width: 1.6rem; height: 1.6rem; flex: none; }
+.mark .tag { fill: var(--pen); }
+.mark .arcs { fill: none; stroke: var(--paper); stroke-width: 2; stroke-linecap: round; }
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--pen); text-decoration: underline; }
+.site-nav a[aria-current="page"] { color: var(--pen); }
+
+@media (max-width: 34rem) {
+  .site-nav .nav-sector { display: none; }
+}
+
+/* ── Type ───────────────────────────────────────────────────────────────── */
+
+h1, h2, h3 {
+  font-stretch: 75%;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.15rem, 1.4rem + 3.4vw, 3.7rem);
+  font-weight: 720;
+  max-width: 18ch;
+}
+
+.page h1 { max-width: 24ch; }
+
+h2 {
+  font-size: clamp(1.6rem, 1.25rem + 1.4vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 680;
+  font-stretch: 87.5%;
+  margin-bottom: 0.35rem;
+}
+
+p { margin: 0 0 1rem; max-width: var(--measure); }
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-top: 1.25rem;
+  max-width: 44ch;
+}
+
+.small { font-size: 0.92rem; color: var(--muted); }
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+  align-items: start;
+}
+
+@media (min-width: 60rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 3.5rem;
+    padding-top: 4rem;
+    padding-bottom: 5.5rem;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--pen);
+  color: var(--pen-ink);
+  font-weight: 640;
+  text-decoration: none;
+  padding: 0.8rem 1.25rem;
+  border-radius: 4px;
+  min-height: 44px;
+}
+
+.button:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+
+/* The custody record: a canary carbonless form, filled in one tap at a time. */
+.record {
+  margin: 0;
+  background: var(--form);
+  color: var(--form-ink);
+  border: 1px solid var(--form-rule);
+  border-radius: 3px;
+  font-stretch: 87.5%;
+  font-size: 0.94rem;
+  box-shadow: 0 1px 0 var(--form-rule), 0 18px 40px -28px rgba(60, 50, 0, 0.45);
+}
+
+.record-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.85rem 1rem 0.7rem;
+  border-bottom: 2px solid var(--form-ink);
+}
+
+.record-title {
+  font-weight: 800;
+  font-stretch: 62%;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.record-item { align-self: end; }
+
+.record table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.record th {
+  text-align: left;
+  font-weight: 640;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.6rem 0.35rem;
+  border-bottom: 1px solid var(--form-rule);
+}
+
+.record td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--form-rule);
+  vertical-align: top;
+}
+
+.record th:first-child, .record td:first-child { padding-left: 1rem; white-space: nowrap; }
+.record td:nth-child(2) { font-weight: 640; white-space: nowrap; }
+.record .entry { color: var(--pen); }
+
+.record figcaption {
+  display: flex;
+  gap: 0.5rem;
+  align-items: start;
+  padding: 0.75rem 1rem 0.85rem;
+}
+
+.record figcaption svg { width: 1.1rem; height: 1.1rem; flex: none; margin-top: 0.15rem; color: var(--pen); }
+
+/* Rows are recorded one after another, the way the taps happen. Once, on load. */
+@media (prefers-reduced-motion: no-preference) {
+  .record tbody tr {
+    animation: recorded 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .record tbody tr:nth-child(1) { animation-delay: 250ms; }
+  .record tbody tr:nth-child(2) { animation-delay: 600ms; }
+  .record tbody tr:nth-child(3) { animation-delay: 950ms; }
+  .record tbody tr:nth-child(4) { animation-delay: 1300ms; }
+  .record tbody tr:nth-child(5) { animation-delay: 1650ms; }
+  .record tbody tr:nth-child(6) { animation-delay: 2000ms; }
+  .record figcaption { animation: recorded 420ms ease-out 2400ms both; }
+}
+
+@keyframes recorded {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Narrow screens: each row becomes time | action, with the person and details beneath. */
+@media (max-width: 34rem) {
+  .record thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .record tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.75rem;
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid var(--form-rule);
+  }
+  .record td { padding: 0; border: 0; }
+  .record th:first-child, .record td:first-child { padding-left: 0; }
+  .record td:nth-child(3), .record td:nth-child(4) { grid-column: 2; }
+  .record td:nth-child(4) { white-space: normal; }
+}
+
+/* ── Sections ───────────────────────────────────────────────────────────── */
+
+.section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.split {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 52rem) {
+  .split { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+}
+
+.sector {
+  border-top: 3px solid var(--ink);
+  padding-top: 1rem;
+}
+
+.sector h3 { font-size: 1.5rem; font-stretch: 75%; }
+.sector .regs { font-weight: 640; color: var(--muted); margin-bottom: 0.75rem; }
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 52rem) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+
+.steps li { counter-increment: step; }
+
+.steps li::before {
+  content: counter(step);
+  display: block;
+  font-weight: 800;
+  font-stretch: 62%;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--pen);
+  margin-bottom: 0.5rem;
+}
+
+.ticks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem 2.5rem;
+  max-width: 60rem;
+}
+
+@media (min-width: 52rem) {
+  .ticks { grid-template-columns: 1fr 1fr; }
+}
+
+.ticks li {
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.5em;
+  width: 0.75rem;
+  height: 0.4rem;
+  border-left: 2px solid var(--pen);
+  border-bottom: 2px solid var(--pen);
+  transform: rotate(-45deg);
+}
+
+.faq { display: grid; gap: 1.5rem; max-width: var(--measure); }
+.faq p { margin-bottom: 0; }
+
+.pilot {
+  border-left: 4px solid var(--pen);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  max-width: 48rem;
+}
+
+.pilot p { font-size: 1.15rem; }
+
+/* ── Inner pages ────────────────────────────────────────────────────────── */
+
+.page-head {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 60rem) {
+  .page-head { padding-top: 4rem; }
+}
+
+.prose h2 { margin-top: 0; }
+.prose h3 { margin-top: 1.75rem; }
+.prose ul { padding-left: 1.25rem; max-width: var(--measure); margin: 0 0 1rem; }
+.prose li { margin-bottom: 0.35rem; }
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+.site-foot {
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.site-foot p { max-width: 70ch; }
+.site-foot a { color: var(--muted); }
+
+.nw { white-space: nowrap; }
+
+/* A standalone link gets a 44px-tall hit area without looking like a button. */
+.more { display: inline-block; padding: 0.6rem 0; }

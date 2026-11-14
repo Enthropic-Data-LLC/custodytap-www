@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIPAA §164.310(d) device and media tracking | CustodyTap</title>
+<meta name="description" content="A record of the movements of laptops, drives and devices that hold ePHI, with hand-offs the receiver accepts and certificates for every wipe and destruction. Supports evidence for HIPAA §164.310(d).">
+<link rel="canonical" href="https://custodytap.com/hipaa/">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CustodyTap">
+<meta property="og:title" content="Device and media tracking for HIPAA §164.310(d)">
+<meta property="og:description" content="Know where every drive with patient data is, and who has it. Hand-offs, wipes and destruction, all on the record.">
+<meta property="og:url" content="https://custodytap.com/hipaa/">
+<meta property="og:image" content="https://custodytap.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Device and media tracking for HIPAA §164.310(d)",
+  "url": "https://custodytap.com/hipaa/",
+  "isPartOf": { "@type": "WebSite", "url": "https://custodytap.com/", "name": "CustodyTap" },
+  "about": ["HIPAA Security Rule", "Device and media controls", "45 CFR 164.310(d)", "ePHI", "Chain of custody"]
+}
+</script>
+</head>
+<body>
+
+<header class="wrap site-head">
+  <a class="mark" href="/" aria-label="CustodyTap home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>
+    CustodyTap
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-sector" href="/nerc-cip/">For utilities</a>
+    <a class="nav-sector" href="/hipaa/" aria-current="page">For healthcare</a>
+    <a href="#pilot">Start a pilot</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="wrap page-head">
+    <h1>Device and media tracking for HIPAA <span class="nw">§164.310(d)</span></h1>
+    <p class="lede">The HIPAA Security Rule asks you to "maintain a record of the movements of hardware and electronic media and any person responsible therefore." CustodyTap makes that record with a tap: an NFC tag on each laptop, drive and device, and a phone tap each time it moves.</p>
+    <p class="small">For security and privacy officers, IT asset managers and biomedical engineering teams at hospitals, clinic groups, imaging centers, labs, and the billing and IT firms that serve them.</p>
+  </div>
+
+  <section class="section prose" aria-labelledby="record">
+    <div class="wrap">
+      <h2 id="record">The accountability record, kept as you go</h2>
+      <p>Each check-out, hand-off, check-in and move records who had the item, where it went and when. This supports evidence for <span class="nw">§164.310(d)(2)(iii)</span> Accountability without a sign-out sheet anyone has to remember.</p>
+
+      <h3>Hand-offs that someone has to accept</h3>
+      <p>Passing a drive to a colleague isn't complete until they tap it and accept it. If they don't, it stays with the sender and shows up as an exception, before it becomes a lost device. Drives going to a shredding vendor travel in a sealed, tagged box. The vendor's driver accepts it, the seal is checked at the plant, and the vendor records the destruction against every drive in the box.</p>
+
+      <h3>Re-use and disposal you can show</h3>
+      <p>Wiping a drive for re-use, or destroying it, records the method, a witness and photos with their <span class="nw">SHA-256</span>. Each one produces a certificate. This supports evidence for <span class="nw">§164.310(d)(2)(i)</span> Disposal and <span class="nw">(d)(2)(ii)</span> Media re-use.</p>
+
+      <h3>Lost means reported the same day</h3>
+      <p>The person holding an item, or an admin, can report it lost from their phone without the tag. It stays on the exceptions report until someone finds it, taps it and checks it in. That gives your breach risk assessment a starting point: who had it last, and where.</p>
+
+      <h3>A record that shows if anyone changes it</h3>
+      <p>Events are chained together by hash, and each day's head is emailed to your admins. Exports can be checked without CustodyTap.</p>
+
+      <h3>It tracks the device, not the data</h3>
+      <p>Items are recorded by asset code and serial number. CustodyTap never reads what's on a drive.</p>
+    </div>
+  </section>
+
+  <section class="section" id="pilot" aria-labelledby="pilot-title">
+    <div class="wrap">
+      <div class="pilot">
+        <h2 id="pilot-title">Start a <span class="nw">90-day</span> pilot with one department</h2>
+        <p>Biomed, imaging or IT asset recovery are good places to start. Some report wording still comes from the utility edition and is being adapted for healthcare during pilots.</p>
+        <p><a class="button" href="mailto:dbrown@enthropicdata.com?subject=CustodyTap%20pilot%20(healthcare)">Email David Brown</a></p>
+        <p class="small">dbrown@enthropicdata.com</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+  <p>CustodyTap supports evidence for the requirements named on this site. It is not affiliated with or endorsed by NERC, any Regional Entity or the U.S. Department of Health and Human Services.</p>
+  <p>&copy; 2026 Enthropic Data LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>
