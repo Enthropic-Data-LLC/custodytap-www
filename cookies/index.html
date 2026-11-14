@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- DRAFT — pending review before publish. Cookie facts from custody-tracker settings as of 2026-11-14. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookie Policy | CustodyTap</title>
+<meta name="description" content="CustodyTap's cookie use: none on the website, and only two strictly necessary cookies in the application. No analytics, advertising or third-party cookies.">
+<link rel="canonical" href="https://custodytap.com/cookies/">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="wrap site-head">
+  <a class="mark" href="/" aria-label="CustodyTap home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>
+    CustodyTap
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-sector" href="/nerc-cip/">For utilities</a>
+    <a class="nav-sector" href="/hipaa/">For healthcare</a>
+    <a href="/#pilot">Start a pilot</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="wrap page-head">
+    <h1>Cookie Policy</h1>
+    <p class="lede">CustodyTap uses as few cookies as it can. The website uses none. The application uses two, and both are strictly necessary — there are no analytics, advertising or third-party cookies anywhere.</p>
+    <p class="small">Last updated 14 November 2026.</p>
+  </div>
+
+  <section class="section prose" aria-labelledby="site">
+    <div class="wrap">
+      <h2 id="site">The website: no cookies</h2>
+      <p>custodytap.com is made of static pages with no scripts and nothing loaded from other sites. It sets no cookies and uses no local storage. You can read every page here without anything being stored on your device.</p>
+
+      <h2 id="app">The application: two strictly necessary cookies</h2>
+      <p>When your organization's people sign in to CustodyTap, the application sets two cookies. Both are needed for it to work safely, so neither can be turned off while you use the service:</p>
+      <ul>
+        <li><strong><code>sessionid</code></strong> — keeps you signed in after you authenticate. It is marked HttpOnly (not readable by scripts), Secure (sent only over HTTPS) and SameSite=Lax, and it expires after about twelve hours.</li>
+        <li><strong><code>csrftoken</code></strong> — protects the forms you submit against cross-site request forgery, so that another site cannot act as you. It is marked Secure and SameSite=Lax.</li>
+      </ul>
+      <p>These are "strictly necessary" cookies. Under ePrivacy and GDPR-style rules, cookies that are essential to deliver a service the user has asked for do not require consent, which is why CustodyTap shows no cookie banner — there is nothing optional to accept or reject.</p>
+
+      <h2 id="none">What we do not use</h2>
+      <ul>
+        <li>No analytics or measurement cookies (no Google Analytics, Plausible, Umami or similar).</li>
+        <li>No advertising, retargeting or social-media cookies or pixels.</li>
+        <li>No third-party cookies of any kind.</li>
+      </ul>
+
+      <h2 id="control">Controlling cookies</h2>
+      <p>You can delete or block cookies in your browser settings. If you block the two cookies above, you will not be able to sign in to or use the CustodyTap application, because the service cannot keep you signed in or protect your submissions without them. Blocking cookies has no effect on this website, which sets none.</p>
+
+      <h2 id="changes">Changes</h2>
+      <p>If we ever introduce a new cookie we will update this page first and, if the cookie is not strictly necessary, ask for your consent before setting it.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>Questions about this policy: <a href="mailto:dbrown@enthropicdata.com">dbrown@enthropicdata.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+  <nav class="foot-links" aria-label="Legal">
+    <a href="/terms/">Terms</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/accessibility/">Accessibility</a>
+    <a href="mailto:dbrown@enthropicdata.com">Contact</a>
+  </nav>
+  <p>CustodyTap supports evidence for the requirements named on this site. It is not affiliated with or endorsed by NERC, any Regional Entity or the U.S. Department of Health and Human Services.</p>
+  <p>&copy; 2026 Enthropic Data LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<!-- DRAFT — pending review before publish. Grounded in custody-tracker models as of 2026-11-14. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | CustodyTap</title>
+<meta name="description" content="How CustodyTap and Enthropic Data LLC handle personal data: what the app records, what the marketing site does not, cookies, retention and your rights.">
+<link rel="canonical" href="https://custodytap.com/privacy/">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="wrap site-head">
+  <a class="mark" href="/" aria-label="CustodyTap home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>
+    CustodyTap
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-sector" href="/nerc-cip/">For utilities</a>
+    <a class="nav-sector" href="/hipaa/">For healthcare</a>
+    <a href="/#pilot">Start a pilot</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="wrap page-head">
+    <h1>Privacy Policy</h1>
+    <p class="lede">CustodyTap records who handled a piece of equipment and when. This page explains what the service collects to do that, what it deliberately does not collect, and the choices you have.</p>
+    <p class="small">Last updated 14 November 2026.</p>
+  </div>
+
+  <section class="section prose" aria-labelledby="who">
+    <div class="wrap">
+      <h2 id="who">Who we are</h2>
+      <p>CustodyTap is a service of <strong>Enthropic Data LLC</strong> ("we", "us"), a North Carolina limited liability company. You can reach us about privacy at <a href="mailto:dbrown@enthropicdata.com">dbrown@enthropicdata.com</a>.</p>
+      <p>This policy covers two things: the public website at <strong>custodytap.com</strong>, and the <strong>CustodyTap application</strong> that your organization's people use to record custody by tapping NFC tags.</p>
+
+      <h2 id="roles">Who controls your data</h2>
+      <p>CustodyTap is sold to organizations. When your organization uses CustodyTap, <strong>your organization decides</strong> what items are tracked, who has an account and how long records are kept. For the custody records and the accounts of its people, your organization is the data controller and we act on its behalf (a processor). Questions about data your employer holds in CustodyTap are best directed to your employer, who can also ask us to act.</p>
+      <p>For the public website, and for emails you send us about a pilot, we are the controller.</p>
+
+      <h2 id="website">The website collects nothing</h2>
+      <p>custodytap.com is a set of static pages. It runs no analytics, sets no cookies and loads nothing from third parties. The only way it sends anything anywhere is a link that opens your own email app addressed to us. Visiting these pages does not create a record with us beyond the ordinary server logs described under <a href="#technical">Technical records</a>.</p>
+
+      <h2 id="app">What the application records, and why</h2>
+      <p>These are the kinds of data the CustodyTap application holds:</p>
+
+      <h3>Your account</h3>
+      <p>An email address, so you can sign in and receive notices. Optionally a phone number, the name of your company (for vendors and contractors) and your role in your organization. Your organization sets these up or asks you for them when you first join.</p>
+
+      <h3>How you sign in</h3>
+      <p>CustodyTap has no passwords. You sign in with a one-time link we email you, and then confirm actions with a passkey — your phone's fingerprint or face unlock. We store a one-way hash of each sign-in link (never the link itself) with a short expiry, and for each passkey we store the public key, a credential identifier and a usage counter that the WebAuthn standard provides. We never receive your fingerprint or face data; that stays on your device.</p>
+
+      <h3>Identity photo (only if your organization turns it on)</h3>
+      <p>Some organizations ask a new person to add a photo of an ID badge so an administrator can confirm who they are before approving the account. This is off by default and is chosen by your organization. When it is used, we store the photo and a SHA-256 fingerprint of it.</p>
+
+      <h3>Custody records</h3>
+      <p>The heart of the service: for each tagged item, a chained, append-only history of events — checked out, scanned, connected, handed off, checked in, sealed, destroyed. Each event records the item's internal asset code, who did it, who it was handed to, how the tap was verified and the time. If your organization enables it and your device offers it, an event may also record the coordinates where the tap happened. Destruction and sanitization events may include photographs, each stored with its SHA-256 fingerprint.</p>
+
+      <h3 id="technical">Technical records</h3>
+      <p>When a tag is tapped, and when the system notices something unusual (an unsigned tag, a replayed counter), we record the IP address and browser user-agent of the request, along with the tag's tap counter. This is what lets CustodyTap tell a genuine tap from a copied link, and gives your security team a trail if a tag is cloned or abused.</p>
+
+      <h2 id="not">What we deliberately do not collect</h2>
+      <ul>
+        <li><strong>The contents of any drive or device.</strong> CustodyTap tracks the item, never what is on it.</li>
+        <li><strong>BES Cyber System Information (BCSI) or protected health information (ePHI).</strong> Items are tracked by asset code and location code, and the free-text fields remind people to keep system names, network addresses and patient data out. Keeping that information out is a shared responsibility — see our Terms.</li>
+        <li><strong>Advertising or cross-site tracking data.</strong> There are no advertising cookies, no analytics trackers and no social-media pixels anywhere in CustodyTap.</li>
+      </ul>
+
+      <h2 id="cookies">Cookies</h2>
+      <p>The website sets no cookies. The application sets only two, both strictly necessary: one to keep you signed in and one to protect forms against cross-site request forgery. There is no consent banner because there is nothing non-essential to consent to. Full detail is in the <a href="/cookies/">Cookie Policy</a>.</p>
+
+      <h2 id="email">Email</h2>
+      <p>We send sign-in links, the daily "chain head" digest that lets your administrators detect tampering, and notices about your account. These are sent through a third-party email delivery provider acting under contract on our behalf. We do not send marketing email to the people who use the application.</p>
+
+      <h2 id="sharing">Who else sees it</h2>
+      <p>We do not sell personal data and we do not share it for advertising. We use a small number of service providers who process data only to run CustodyTap under contract: our hosting provider (servers located in the United States) and the email delivery provider above. We will name our current providers on request. We disclose data otherwise only when the law requires it, and we will tell the affected organization unless we are legally prevented.</p>
+
+      <h2 id="retention">How long we keep it</h2>
+      <p>Custody records are append-only and hash-chained on purpose: they are audit evidence, so they are not edited or quietly deleted. We keep them for as long as your organization needs them for its own recordkeeping and then delete them under our agreement with that organization. Account details are kept while the account is active. Sign-in links expire in minutes and are then useless. Security and tap logs are kept for a limited period for abuse detection and then removed.</p>
+
+      <h2 id="rights">Your choices and rights</h2>
+      <p>Depending on where you live, you may have rights to see, correct, export or delete personal data about you, and to object to or restrict some processing. Because most data in CustodyTap is held on behalf of your organization, the quickest route is to ask your organization; we will help them act on your request. Where we are the controller, contact us directly at <a href="mailto:dbrown@enthropicdata.com">dbrown@enthropicdata.com</a> and we will respond within the time the law allows.</p>
+      <p>One limit worth stating plainly: a completed custody event is audit evidence. Where law or our contract with your organization requires that evidence to be retained, we may keep it even after an erasure request, and will tell you why.</p>
+      <p>We do not sell or "share" personal information as those terms are used under US state privacy laws, and we do not use it for targeted advertising, so there is nothing to opt out of on that front.</p>
+
+      <h2 id="security">How we protect it</h2>
+      <p>All connections use HTTPS. Sign-in is passwordless and confirmed with a passkey. Sign-in links and session tokens are stored only as one-way hashes. Custody events are hash-chained so a change or deletion is detectable, and each export ships with a script that verifies the chain independently of us. Access to an organization's data is limited to that organization's own accounts.</p>
+
+      <h2 id="children">Children</h2>
+      <p>CustodyTap is a workplace tool and is not directed to children. We do not knowingly collect data from anyone under 16.</p>
+
+      <h2 id="international">Where your data lives</h2>
+      <p>CustodyTap is operated from the United States and your data is processed there.</p>
+
+      <h2 id="changes">Changes to this policy</h2>
+      <p>If we change this policy we will update the date above and, for a material change affecting the application, tell your organization's administrators.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>Enthropic Data LLC — <a href="mailto:dbrown@enthropicdata.com">dbrown@enthropicdata.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+  <nav class="foot-links" aria-label="Legal">
+    <a href="/terms/">Terms</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/accessibility/">Accessibility</a>
+    <a href="mailto:dbrown@enthropicdata.com">Contact</a>
+  </nav>
+  <p>CustodyTap supports evidence for the requirements named on this site. It is not affiliated with or endorsed by NERC, any Regional Entity or the U.S. Department of Health and Human Services.</p>
+  <p>&copy; 2026 Enthropic Data LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>

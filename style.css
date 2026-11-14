@@ -537,6 +537,14 @@ p { margin: 0 0 1rem; max-width: var(--measure); }
 .site-foot p { max-width: 70ch; }
 .site-foot a { color: var(--muted); }
 
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1.25rem;
+}
+.foot-links a { color: var(--pen); }
+
 .nw { white-space: nowrap; }
 
 /* A standalone link gets a 44px-tall hit area without looking like a button. */

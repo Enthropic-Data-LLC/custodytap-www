@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- DRAFT — pending review before publish. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Statement | CustodyTap</title>
+<meta name="description" content="CustodyTap's commitment to accessibility: the standard we aim for, the measures we take, known limitations, and how to tell us about a barrier.">
+<link rel="canonical" href="https://custodytap.com/accessibility/">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="wrap site-head">
+  <a class="mark" href="/" aria-label="CustodyTap home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>
+    CustodyTap
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-sector" href="/nerc-cip/">For utilities</a>
+    <a class="nav-sector" href="/hipaa/">For healthcare</a>
+    <a href="/#pilot">Start a pilot</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="wrap page-head">
+    <h1>Accessibility Statement</h1>
+    <p class="lede">We want CustodyTap to be usable by everyone who has to record custody, including people who use a keyboard, a screen reader or other assistive technology.</p>
+    <p class="small">Last updated 14 November 2026.</p>
+  </div>
+
+  <section class="section prose" aria-labelledby="standard">
+    <div class="wrap">
+      <h2 id="standard">The standard we aim for</h2>
+      <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA across both this website and the CustodyTap application. We treat that as the target for new work and for fixing what we find.</p>
+
+      <h2 id="measures">What we do</h2>
+      <ul>
+        <li>Pages are built from semantic HTML, with a single clear heading order and labelled landmarks.</li>
+        <li>Everything is operable by keyboard, and the focus indicator is always visible.</li>
+        <li>Every form field has a programmatically associated label; the sign-in flow is designed to work with a screen reader.</li>
+        <li>Text aims for a contrast ratio of at least 4.5:1, and color is never the only way information is conveyed.</li>
+        <li>We respect your <code>prefers-reduced-motion</code> and <code>prefers-color-scheme</code> settings.</li>
+        <li>Interactive targets are sized for touch, which matters because the main way you use CustodyTap is tapping on a phone.</li>
+        <li>Images carry text alternatives, and decorative graphics are hidden from assistive technology.</li>
+      </ul>
+
+      <h2 id="limits">Known limitations</h2>
+      <p>CustodyTap is a young service in pilot, and we have not yet completed a formal third-party accessibility audit. There may be places that fall short of the target above, and the core task depends on an NFC-capable phone, which is itself a constraint for some users. If you rely on assistive technology and hit a barrier, telling us is the fastest way to get it fixed — see below.</p>
+
+      <h2 id="feedback">Tell us about a barrier</h2>
+      <p>If any part of CustodyTap is hard to use with assistive technology, email <a href="mailto:dbrown@enthropicdata.com">dbrown@enthropicdata.com</a> with the page or screen and what went wrong. We aim to acknowledge accessibility reports within five business days and will work with you on a way to get what you need in the meantime.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>Enthropic Data LLC — <a href="mailto:dbrown@enthropicdata.com">dbrown@enthropicdata.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+  <nav class="foot-links" aria-label="Legal">
+    <a href="/terms/">Terms</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/accessibility/">Accessibility</a>
+    <a href="mailto:dbrown@enthropicdata.com">Contact</a>
+  </nav>
+  <p>CustodyTap supports evidence for the requirements named on this site. It is not affiliated with or endorsed by NERC, any Regional Entity or the U.S. Department of Health and Human Services.</p>
+  <p>&copy; 2026 Enthropic Data LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>
