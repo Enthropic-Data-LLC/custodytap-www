@@ -502,7 +502,7 @@ p { margin: 0 0 1rem; max-width: var(--measure); }
 }
 .est-sub { font-size: 1.1rem; margin-bottom: 0.5rem; }
 .est-status { font-weight: 640; border-left: 3px solid var(--bad); padding-left: 0.75rem; }
-.stale .est-live, .stale #o-range, .stale #o-hours, .stale .est-table, .stale .est-risk { opacity: 0.4; }
+.stale .est-live, .stale #o-range, .stale #o-hours, .stale .est-table { opacity: 0.4; }
 
 .est-table {
   width: 100%;
@@ -518,11 +518,8 @@ p { margin: 0 0 1rem; max-width: var(--measure); }
 .est-table tfoot th, .est-table tfoot td { font-weight: 700; border-bottom: 0; }
 .fn { font-weight: 400; }
 
-.est-risk { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.est-risk p { margin: 0; }
-.est-risk-label { display: block; font-size: 0.92rem; color: var(--muted); }
-.est-risk-num { display: block; font-weight: 720; font-stretch: 75%; font-size: 2rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.est-risk + .small { margin-top: 0.75rem; }
+.est-risk-table { margin-top: 1.75rem; }
+.est-risk-table td { font-weight: 640; }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 
