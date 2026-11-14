@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estimate what device record-keeping costs your practice | CustodyTap</title>
+<meta name="description" content="Enter your device count and how you track devices today. See an estimate of the staff time and expected losses with CustodyTap, with its range and every assumption shown. Runs in your browser; nothing you type is sent anywhere.">
+<link rel="canonical" href="https://custodytap.com/hipaa/estimate/">
+<meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CustodyTap">
+<meta property="og:title" content="What does device record-keeping cost your practice?">
+<meta property="og:description" content="An estimate from your own numbers, with its range and every assumption shown.">
+<meta property="og:url" content="https://custodytap.com/hipaa/estimate/">
+<meta property="og:image" content="https://custodytap.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script src="/hipaa/estimate/estimate.js" defer></script>
+</head>
+<body>
+
+<header class="wrap site-head">
+  <a class="mark" href="/" aria-label="CustodyTap home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="tag" fill-rule="evenodd" d="M9 2h14l5 5v21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l5-5zm7 4.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/><path class="arcs" d="M10.6 18.2a7.6 7.6 0 0 1 10.8 0M13.1 21.4a4 4 0 0 1 5.8 0"/></svg>
+    CustodyTap
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-sector" href="/nerc-cip/">For utilities</a>
+    <a class="nav-sector" href="/hipaa/">For healthcare</a>
+    <a href="#pilot">Start a pilot</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="wrap page-head">
+    <h1>Estimate what device record-keeping costs your practice</h1>
+    <p class="lede">Enter a few numbers about your practice. The estimate runs in your browser, and nothing you type leaves this page.</p>
+    <p class="small">Built for independent practices and clinics with about 10 to 200 laptops, drives and other devices that hold patient data. It's an estimate from our assumptions, not a measurement: see <a href="#how">how it works</a>.</p>
+  </div>
+
+  <section class="section" aria-label="Estimate">
+    <div class="wrap est">
+      <form class="est-form" id="est" novalidate>
+        <h2 class="est-h">Your practice</h2>
+
+        <div class="field">
+          <label for="f-devices">Devices that hold patient data</label>
+          <p class="hint" id="h-devices">Laptops, workstations, tablets, external drives, and copiers or scanners with a hard drive.</p>
+          <input class="num" id="f-devices" name="devices" type="text" inputmode="numeric" autocomplete="off" value="30" aria-describedby="h-devices e-devices">
+          <p class="err" id="e-devices" hidden></p>
+        </div>
+
+        <fieldset class="field">
+          <legend>How you keep track of them today</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="method" value="informal"> No written record</label>
+            <label class="choice"><input type="radio" name="method" value="clipboard"> A paper sign-out sheet</label>
+            <label class="choice"><input type="radio" name="method" value="spreadsheet" checked> A spreadsheet</label>
+            <label class="choice"><input type="radio" name="method" value="asset_sw"> Asset-tracking software (barcode or QR labels)</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Are all your laptops and portable drives encrypted?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="enc" value="yes"> Yes, every one</label>
+            <label class="choice"><input type="radio" name="enc" value="no" checked> Some, none, or not sure</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="f-requests">Times a year someone asks to see your device records <span class="opt">(optional)</span></label>
+          <p class="hint" id="h-requests">Your security risk analysis, a cyber-insurance form, an auditor or a payer. Leave blank to use 0.5 to 3 a year.</p>
+          <input class="num" id="f-requests" name="requests" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-requests e-requests">
+          <p class="err" id="e-requests" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-reqHours">Hours each of those takes today <span class="opt">(optional)</span></label>
+          <p class="hint" id="h-reqHours">Putting together the device list, who has each one, and two years of disposal records. Leave blank to use <span id="h-reqHours-range">2 to 8 hours</span>.</p>
+          <input class="num" id="f-reqHours" name="reqHours" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-reqHours e-reqHours">
+          <p class="err" id="e-reqHours" hidden></p>
+        </div>
+
+        <details class="est-more">
+          <summary>Change our other assumptions</summary>
+
+          <div class="field">
+            <label for="f-staffRate">Staff cost per hour, with benefits, in dollars <span class="opt">(optional)</span></label>
+            <p class="hint" id="h-staffRate">Leave blank to use $26 to $34.</p>
+            <input class="num" id="f-staffRate" name="staffRate" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-staffRate e-staffRate">
+            <p class="err" id="e-staffRate" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-mgrRate">Practice manager cost per hour, with benefits, in dollars <span class="opt">(optional)</span></label>
+            <p class="hint" id="h-mgrRate">Leave blank to use $45 to $85.</p>
+            <input class="num" id="f-mgrRate" name="mgrRate" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-mgrRate e-mgrRate">
+            <p class="err" id="e-mgrRate" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-moves">Times each device changes hands in a year <span class="opt">(optional)</span></label>
+            <p class="hint" id="h-moves">Check-outs, hand-offs, repairs, loaners and office moves. Leave blank to use 1 to 12.</p>
+            <input class="num" id="f-moves" name="moves" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-moves e-moves">
+            <p class="err" id="e-moves" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-staff">Staff who handle devices <span class="opt">(optional)</span></label>
+            <p class="hint" id="h-staff">Each gets a short training in the first year. Leave blank to use 10 to 40.</p>
+            <input class="num" id="f-staff" name="staff" type="text" inputmode="numeric" autocomplete="off" aria-describedby="h-staff e-staff">
+            <p class="err" id="e-staff" hidden></p>
+          </div>
+
+          <div class="field" id="f-assetSw-wrap" hidden>
+            <label for="f-assetSw">What your asset software costs a year, in dollars <span class="opt">(optional)</span></label>
+            <p class="hint" id="h-assetSw">Leave blank to use $400 to $1,500.</p>
+            <input class="num" id="f-assetSw" name="assetSw" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-assetSw e-assetSw">
+            <p class="err" id="e-assetSw" hidden></p>
+          </div>
+        </details>
+      </form>
+
+      <div class="est-out" id="est-out">
+        <h2 class="est-h">Your estimate</h2>
+        <noscript><p>The estimate runs in your browser and needs JavaScript turned on. Nothing you type is sent anywhere.</p></noscript>
+        <p class="est-status" id="o-status" role="status" hidden></p>
+
+        <div class="est-live" aria-live="polite" aria-atomic="true">
+          <p class="est-big" id="o-big">&nbsp;</p>
+          <p class="est-sub" id="o-sub">Working out your estimate&hellip;</p>
+        </div>
+        <p class="small" id="o-range"></p>
+        <p id="o-hours"></p>
+
+        <table class="est-table">
+          <caption>A year of device record-keeping, averaged over the simulations</caption>
+          <thead>
+            <tr><td></td><th scope="col" id="t-cur-head">Spreadsheet</th><th scope="col">CustodyTap<span class="fn" aria-hidden="true">*</span></th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Staff and manager hours</th><td id="t-cur-hours"></td><td id="t-ct-hours"></td></tr>
+            <tr><th scope="row">Cost of that time</th><td id="t-cur-labor"></td><td id="t-ct-labor"></td></tr>
+            <tr><th scope="row">Setup, spread over 3 years</th><td id="t-cur-setup"></td><td id="t-ct-setup"></td></tr>
+            <tr><th scope="row">Tools and tags</th><td id="t-cur-tool"></td><td id="t-ct-tool"></td></tr>
+            <tr><th scope="row">Expected losses<span class="fn" aria-hidden="true">&dagger;</span></th><td id="t-cur-risk"></td><td id="t-ct-risk"></td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th scope="row">Total</th><td id="t-cur-total"></td><td id="t-ct-total"></td></tr>
+          </tfoot>
+        </table>
+        <p class="small">* Before CustodyTap's own subscription, which isn't included anywhere on this page. &dagger; Replacing lost devices, plus the cost of a breach response weighted by its chance of happening.</p>
+
+        <h3 class="est-h3">Chance of at least one reportable device breach in five years</h3>
+        <div class="est-risk">
+          <p><span class="est-risk-label" id="r-cur-head">Spreadsheet</span> <span class="est-risk-num" id="r-cur"></span></p>
+          <p><span class="est-risk-label">CustodyTap</span> <span class="est-risk-num" id="r-ct"></span></p>
+        </div>
+        <p class="small" id="r-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section prose" aria-labelledby="how">
+    <div class="wrap">
+      <h2 id="how">How the estimate works</h2>
+      <p>Your browser runs 10,000 simulations. Each one picks a value from a range for everything you didn't enter, then works out a year of record-keeping two ways, your current method and CustodyTap, with the same picks, so the two are compared fairly. The figures above are averages over those simulations, and the range shows where 8 in 10 of them fall.</p>
+
+      <h3>What's an assumption</h3>
+      <p>Almost everything. How long each method takes per move, per inventory count, per disposal and per request, how many moves actually get written down, and how often a retired device leaves without being wiped are our estimates, each with a range. <strong>CustodyTap's own figures are estimates of how the product is used. We haven't yet measured them at a practice.</strong> A pilot measures them for yours.</p>
+
+      <h3>Where the outside numbers come from</h3>
+      <ul>
+        <li>Staff and manager pay: U.S. Bureau of Labor Statistics, medical secretaries (median $19.54 an hour, May 2023) and medical and health services managers (median $117,960 a year, May 2024), with benefits at about 30% of total pay.</li>
+        <li>Lost laptops: 5% to 10% over a three-year life, from a 2010 Ponemon Institute study for Intel. It's old and about large companies, so we use it only as a range.</li>
+        <li>Breach rate: the HHS Office for Civil Rights received 63,966 reports of breaches affecting fewer than 500 people in 2022. We assume 5% to 15% of them involved lost, stolen or improperly disposed devices, across 500,000 to 800,000 covered entities. That puts a 30-device practice that uses a spreadsheet at roughly 0.2% to 2% a year, and each method moves it up or down from there.</li>
+        <li>Breach costs: legal advice, the risk assessment and staff time ($5,000 to $50,000), plus $3 to $25 per patient notified, and a 0.5% to 5% chance of a federal penalty of $25,000 to $250,000. Published settlements over lost laptops at small organizations have been $50,000 to $65,000.</li>
+      </ul>
+
+      <h3>What it leaves out</h3>
+      <p>Lessor charges for equipment that isn't returned, collecting devices from staff who leave, cyber-insurance premiums, and the cost to your reputation after a breach. It also assumes your staff tap the tags: if they skip it, the saving shrinks.</p>
+
+      <h3>What it isn't</h3>
+      <p>It isn't a quote, a guarantee, or legal, actuarial or financial advice. It doesn't make a practice compliant with anything.</p>
+    </div>
+  </section>
+
+  <section class="section" id="pilot" aria-labelledby="pilot-title">
+    <div class="wrap">
+      <div class="pilot">
+        <h2 id="pilot-title">Measure it at your practice</h2>
+        <p>A pilot runs 90 days at one office. We time how long your device record-keeping takes now and again at the end, so you can see your own figures, not ours.</p>
+        <p><a class="button" href="mailto:dbrown@enthropicdata.com?subject=CustodyTap%20pilot%20(healthcare)">Email David Brown</a></p>
+        <p class="small">dbrown@enthropicdata.com</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+  <p>CustodyTap supports evidence for the requirements named on this site. It is not affiliated with or endorsed by NERC, any Regional Entity or the U.S. Department of Health and Human Services.</p>
+  <p>&copy; 2026 Enthropic Data LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>

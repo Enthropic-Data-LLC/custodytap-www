@@ -20,6 +20,7 @@
   --form-ink: #2b2a1d;
   --pen: #2443b0;       /* ballpoint blue: entries, links, the one button */
   --pen-ink: #ffffff;
+  --bad: #b3261e;
   --measure: 66ch;
   color-scheme: light;
 }
@@ -35,6 +36,7 @@
     --form-ink: #f1e8bf;
     --pen: #9db0ff;
     --pen-ink: #0e1430;
+    --bad: #ff9a8f;
     color-scheme: dark;
   }
 }
@@ -49,6 +51,7 @@
   --form-ink: #f1e8bf;
   --pen: #9db0ff;
   --pen-ink: #0e1430;
+  --bad: #ff9a8f;
   color-scheme: dark;
 }
 
@@ -413,6 +416,113 @@ p { margin: 0 0 1rem; max-width: var(--measure); }
 .prose h3 { margin-top: 1.75rem; }
 .prose ul { padding-left: 1.25rem; max-width: var(--measure); margin: 0 0 1rem; }
 .prose li { margin-bottom: 0.35rem; }
+
+/* ── Estimate (hipaa/estimate) ─────────────────────────────────────────── */
+
+[hidden] { display: none !important; }
+
+.est {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 60rem) {
+  .est { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 3.5rem; }
+  .est-out { position: sticky; top: 1.25rem; }
+}
+
+.est-h { font-size: 1.5rem; font-stretch: 75%; margin-bottom: 1.25rem; }
+.est-h3 { font-size: 1.1rem; margin: 1.75rem 0 0.5rem; }
+
+.est-form { max-width: 36rem; }
+.est-form .field { margin: 0 0 1.75rem; padding: 0; border: 0; min-width: 0; }
+.field > label, .field > legend { display: block; font-weight: 640; padding: 0; margin-bottom: 0.2rem; }
+.opt { font-weight: 400; color: var(--muted); }
+.hint { font-size: 0.92rem; color: var(--muted); margin: 0 0 0.5rem; }
+
+.num {
+  font: inherit;
+  font-size: 1.0625rem;
+  font-variant-numeric: tabular-nums;
+  width: 9rem;
+  min-height: 44px;
+  padding: 0.45rem 0.65rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--muted);
+  border-radius: 4px;
+}
+
+.num[aria-invalid="true"] { border: 2px solid var(--bad); }
+.err { color: var(--bad); font-size: 0.92rem; font-weight: 600; margin: 0.4rem 0 0; }
+.err::before { content: "! "; font-weight: 800; }
+
+.choices { display: grid; gap: 0.1rem; }
+.choice { display: flex; align-items: center; gap: 0.65rem; min-height: 44px; cursor: pointer; }
+.choice input { flex: none; width: 1.2rem; height: 1.2rem; margin: 0; accent-color: var(--pen); }
+
+.est-more { border-top: 1px solid var(--rule); padding-top: 0.25rem; }
+.est-more summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--pen);
+  font-weight: 600;
+  list-style-position: inside;
+}
+.est-more[open] summary { margin-bottom: 1rem; }
+
+.est-out {
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--pen);
+  border-radius: 3px;
+  padding: 1.25rem 1rem 0.75rem;
+}
+
+@media (min-width: 40rem) { .est-out { padding: 1.5rem 1.5rem 1rem; } }
+@media (max-width: 26rem) {
+  .est-out { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .est-table { font-size: 0.9rem; }
+  .est-table th, .est-table td { padding-left: 0.5rem; }
+  .est-table thead th { font-stretch: 75%; }
+}
+
+.est-out .est-h { margin-bottom: 0.75rem; }
+.est-big {
+  font-weight: 760;
+  font-stretch: 75%;
+  font-size: clamp(2.3rem, 1.7rem + 2.4vw, 3.3rem);
+  line-height: 1;
+  color: var(--pen);
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.4rem;
+}
+.est-sub { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.est-status { font-weight: 640; border-left: 3px solid var(--bad); padding-left: 0.75rem; }
+.stale .est-live, .stale #o-range, .stale #o-hours, .stale .est-table, .stale .est-risk { opacity: 0.4; }
+
+.est-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  margin: 1.25rem 0 0.75rem;
+}
+.est-table caption { text-align: left; font-weight: 640; padding-bottom: 0.4rem; }
+.est-table th, .est-table td { padding: 0.45rem 0 0.45rem 0.75rem; border-bottom: 1px solid var(--rule); text-align: right; }
+.est-table th[scope="row"] { text-align: left; font-weight: 400; padding-left: 0; }
+.est-table thead th { font-weight: 640; vertical-align: bottom; }
+.est-table tfoot th, .est-table tfoot td { font-weight: 700; border-bottom: 0; }
+.fn { font-weight: 400; }
+
+.est-risk { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.est-risk p { margin: 0; }
+.est-risk-label { display: block; font-size: 0.92rem; color: var(--muted); }
+.est-risk-num { display: block; font-weight: 720; font-stretch: 75%; font-size: 2rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.est-risk + .small { margin-top: 0.75rem; }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 
