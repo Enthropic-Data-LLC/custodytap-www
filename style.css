@@ -546,3 +546,5 @@ p { margin: 0 0 1rem; max-width: var(--measure); }
 
 /* A standalone link gets a 44px-tall hit area without looking like a button. */
 .more { display: inline-block; padding: 0.6rem 0; }
+
+.video-link img { display: block; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; }
