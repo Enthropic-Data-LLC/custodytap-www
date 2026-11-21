@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy | CustodyTap</title>
-<meta name="description" content="How CustodyTap and Enthropic Data LLC handle personal data: what the app records, what the marketing site does not, cookies, retention and your rights.">
+<meta name="description" content="How CustodyTap and Enthropic Data LLC handle personal data: what the app records, what the marketing site measures, cookies, retention and your rights.">
 <link rel="canonical" href="https://custodytap.com/privacy/">
 <meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; script-src https://stats.enthropicdata.com; connect-src https://stats.enthropicdata.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -34,7 +34,7 @@
   <div class="wrap page-head">
     <h1>Privacy Policy</h1>
     <p class="lede">CustodyTap records who handled a piece of equipment and when. This page explains what the service collects to do that, what it deliberately does not collect, and the choices you have.</p>
-    <p class="small">Last updated 14 November 2026.</p>
+    <p class="small">Last updated 21 November 2026.</p>
   </div>
 
   <section class="section prose" aria-labelledby="who">
@@ -48,7 +48,7 @@
       <p>For the public website, and for emails you send us about a pilot, we are the controller.</p>
 
       <h2 id="website">The website collects nothing</h2>
-      <p>custodytap.com is a set of static pages. It runs no analytics, sets no cookies and loads nothing from third parties. The only way it sends anything anywhere is a link that opens your own email app addressed to us. Visiting these pages does not create a record with us beyond the ordinary server logs described under <a href="#technical">Technical records</a>.</p>
+      <p>custodytap.com is a set of static pages. It sets no cookies and uses no advertising or third-party trackers. We count visits with Umami, an analytics tool we host ourselves. It records the page without its query string, referring site, browser, operating system, device type, screen size, language and approximate location (country, region and city). Your IP address is used briefly to estimate location and create a one-way anonymous session identifier, and is not stored by Umami. Numbers entered in our estimate calculators are not sent. It does not run if your browser sends Do Not Track, and analytics records are kept until we delete them. Otherwise, the only way the site sends anything is a link that opens your own email app addressed to us, and the ordinary server logs described under <a href="#technical">Technical records</a>.</p>
 
       <h2 id="app">What the application records, and why</h2>
       <p>These are the kinds of data the CustodyTap application holds:</p>
@@ -72,7 +72,7 @@
       <ul>
         <li><strong>The contents of any drive or device.</strong> CustodyTap tracks the item, never what is on it.</li>
         <li><strong>BES Cyber System Information (BCSI) or protected health information (ePHI).</strong> Items are tracked by asset code and location code, and the free-text fields remind people to keep system names, network addresses and patient data out. Keeping that information out is a shared responsibility — see our Terms.</li>
-        <li><strong>Advertising or cross-site tracking data.</strong> There are no advertising cookies, no analytics trackers and no social-media pixels anywhere in CustodyTap.</li>
+        <li><strong>Advertising or cross-site tracking data.</strong> There are no advertising cookies or social-media pixels anywhere in CustodyTap, and no analytics of any kind in the application. Only the public marketing website uses the cookie-free visit counting described above.</li>
       </ul>
 
       <h2 id="cookies">Cookies</h2>
@@ -124,5 +124,6 @@
   </div>
 </footer>
 
+<script defer src="https://stats.enthropicdata.com/script.js" data-website-id="34a4aa38-a8db-4658-8390-8f63e702121d" data-domains="custodytap.com,www.custodytap.com" data-exclude-search="true" data-exclude-hash="true" data-do-not-track="true"></script>
 </body>
 </html>

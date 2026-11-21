@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://custodytap.com/cookies/">
 <meta name="theme-color" content="#fbfcfc" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#12191c" media="(prefers-color-scheme: dark)">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; script-src https://stats.enthropicdata.com; connect-src https://stats.enthropicdata.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -34,13 +34,13 @@
   <div class="wrap page-head">
     <h1>Cookie Policy</h1>
     <p class="lede">CustodyTap uses as few cookies as it can. The website uses none. The application uses two, and both are strictly necessary — there are no analytics, advertising or third-party cookies anywhere.</p>
-    <p class="small">Last updated 14 November 2026.</p>
+    <p class="small">Last updated 21 November 2026.</p>
   </div>
 
   <section class="section prose" aria-labelledby="site">
     <div class="wrap">
       <h2 id="site">The website: no cookies</h2>
-      <p>custodytap.com is made of static pages with no scripts and nothing loaded from other sites. It sets no cookies and uses no local storage. You can read every page here without anything being stored on your device.</p>
+      <p>custodytap.com is made of static pages. It sets no cookies and uses no local storage, so you can read every page here without anything being stored on your device. Its only outside request is to our own self-hosted, cookie-free Umami analytics, described in our <a href="/privacy/">Privacy Policy</a>.</p>
 
       <h2 id="app">The application: two strictly necessary cookies</h2>
       <p>When your organization's people sign in to CustodyTap, the application sets two cookies. Both are needed for it to work safely, so neither can be turned off while you use the service:</p>
@@ -52,7 +52,7 @@
 
       <h2 id="none">What we do not use</h2>
       <ul>
-        <li>No analytics or measurement cookies (no Google Analytics, Plausible, Umami or similar).</li>
+        <li>No analytics or measurement cookies. The website counts visits with self-hosted Umami, which sets none, and the application runs no analytics at all.</li>
         <li>No advertising, retargeting or social-media cookies or pixels.</li>
         <li>No third-party cookies of any kind.</li>
       </ul>
@@ -83,5 +83,6 @@
   </div>
 </footer>
 
+<script defer src="https://stats.enthropicdata.com/script.js" data-website-id="34a4aa38-a8db-4658-8390-8f63e702121d" data-domains="custodytap.com,www.custodytap.com" data-exclude-search="true" data-exclude-hash="true" data-do-not-track="true"></script>
 </body>
 </html>
